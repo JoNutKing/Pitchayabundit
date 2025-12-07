@@ -1,0 +1,1463 @@
+/* --- 1. ตั้งค่าฟอนต์พื้นฐาน --- */
+
+:root {
+    --font-heading: 'Kanit', sans-serif;
+    /* ฟอนต์หัวข้อ */
+    --font-body: 'Sarabun', sans-serif;
+    /* ฟอนต์เนื้อหา */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* ใช้ฟอนต์ Sarabun เป็นหลักสำหรับเนื้อหาทั่วไป */
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    /* เพิ่มช่องว่างระหว่างบรรทัดให้อ่านง่าย (สำคัญมาก!) */
+    color: #e0e0e0;
+    /* สีตัวอักษรขาวนวล (ไม่ขาวจั๊วะ) ถนอมสายตา */
+    -webkit-font-smoothing: antialiased;
+    /* ทำให้ตัวหนังสือคมชัดบน Mac/iPhone */
+}
+
+
+/* --- 2. ปรับแต่งหัวข้อ (Headings) ให้ดูแพง --- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    /* ใช้ Kanit เฉพาะหัวข้อ */
+    font-weight: 600;
+    /* ความหนากำลังดี */
+    letter-spacing: 0.5px;
+    /* เพิ่มระยะห่างตัวอักษรนิดนึง ให้ดูโปร่ง */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+
+/* --- 3. ปรับแต่งเมนูและปุ่ม (Navigation & Buttons) --- */
+
+
+/* เมนูและปุ่มควรใช้ Kanit เพื่อความเท่และกระชับ */
+
+.navbar,
+.menu-links a,
+.cta-btn,
+.view-all-btn,
+.footer-links a,
+.section-header h2 {
+    font-family: var(--font-heading);
+}
+
+
+/* ปรับเมนูให้ดูคลีนขึ้น */
+
+.menu-links a {
+    font-weight: 400;
+    /* ไม่หนาเกินไป */
+    letter-spacing: 0.3px;
+}
+
+
+/* --- 4. ปรับเนื้อหาข่าวและบทความ --- */
+
+.news-content p,
+.degree-overlay p,
+.info-text p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    /* ใช้ตัวบาง (Light) จะดู Modern มาก */
+    color: #cccccc;
+    /* สีเทาอ่อน */
+    font-size: 15px;
+}
+
+
+/* วันที่และแท็กต่างๆ */
+
+.news-date,
+.sub-title {
+    font-family: var(--font-heading);
+}
+
+
+/* --- Navbar หลัก --- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* เปลี่ยนจากสีดำล้วน เป็นไล่สีนิดๆ ให้ดูหรู (Gradient Black) */
+    background: linear-gradient(90deg, #141414 0%, #252525 100%);
+    height: 70px;
+    padding: 0;
+    /* เงาที่นุ่มนวลขึ้น */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    /* (Optional) ทำให้เมนูติดด้านบนเวลาเลื่อนลง */
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* --- สั่งซ่อนปุ่มเมนูไว้ก่อน (สำหรับคอมพิวเตอร์) --- */
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* --- แก้ไขส่วน .hero-banner --- */
+
+.hero-banner {
+    width: 100%;
+    /* 1. เพิ่มความสูงอีกนิด (จาก 550px เป็น 600-650px) เพื่อให้มีที่พอสำหรับรูปและตัวหนังสือ */
+    height: 630px;
+    background-image: url('Pictures/Pitchayabundit.png');
+    background-size: cover;
+    /* 2. เปลี่ยนจุดโฟกัสรูป: ล็อคให้โชว์ "ด้านล่าง" เสมอ (Bottom) 
+       เพื่อกันไม่ให้ตัวหนังสือด้านล่างโดนตัดครับ */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/* 3. เพิ่ม Overlay (ฟิล์มสีดำบางๆ ทับรูป) */
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* สีดำโปร่งแสง 30% (ปรับเลข 0.3 ให้มาก/น้อยได้ตามชอบ) */
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    /* ให้อยู่เหนือรูปภาพ แต่อยู่ใต้ข้อความ (ถ้ามี) */
+}
+
+
+/* --- พื้นที่สีขาวตัดเฉียง (Logo Background) --- */
+
+.nav-logo {
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 45px;
+    padding-right: 100px;
+    /* เว้นที่ให้มุมเฉียง */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    min-width: 380px;
+    position: relative;
+}
+
+
+/* เพิ่มลูกเล่นแถบสีทองเล็กๆ ตรงรอยต่อเฉียง */
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: #FFD700;
+    /* สีทอง */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    /* เฉียงตามแม่ */
+    display: none;
+    /* เปิดใช้งานได้ถ้าอยากให้มีเส้นขอบ */
+}
+
+
+/* --- ตัวรูปภาพโลโก้ + Animation --- */
+
+.logo-img {
+    height: 140px;
+    /* ปรับลดจาก 150px (ใหญ่เกิน) ให้พอดีกับบาร์ 90px */
+    width: auto;
+    object-fit: contain;
+    /* Gimmick 1: โลโก้ค่อยๆ ลอยขึ้นมาตอนเปิดเว็บ */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- เมนู (Menu) --- */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-right: 40px;
+}
+
+.menu-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    /* สีเทาอ่อน (อ่านสบายตากว่าขาวล้วน) */
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+
+/* Gimmick 2: เส้นขีดวิ่งออกจากตรงกลาง (Underline Animation) */
+
+.menu-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffcc00;
+    /* สีเส้นขีด (เหลืองทอง) */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    /* จัดให้อยู่กลาง */
+}
+
+.menu-links a:hover {
+    color: #ffffff;
+}
+
+.menu-links a:hover::after {
+    width: 100%;
+    /* ขยายเส้นเต็ม */
+}
+
+
+/* --- ส่วน Action Buttons --- */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn,
+.lang-btn {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    transition: opacity 0.3s;
+}
+
+.icon-btn:hover,
+.lang-btn:hover {
+    opacity: 0.7;
+}
+
+
+/* --- ปุ่มสมัครเรียน (Premium CTA) --- */
+
+.cta-btn {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%);
+    color: #333;
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden;
+    /* จำเป็นสำหรับเอฟเฟกต์แสง */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Gimmick 3: แสงวิบวับพาดผ่านปุ่ม (Shine Effect) */
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.5s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    /* ลอยขึ้นนิดนึง */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.cta-btn:hover::before {
+    left: 100%;
+    /* สั่งให้แสงวิ่งผ่าน */
+}
+
+
+/* --- ส่วนแถบเมนูด่วน (Quick Nav) - ฉบับ Premium Design --- */
+
+.quick-nav {
+    position: absolute;
+    /* จัดวางตำแหน่งกึ่งกลาง */
+    bottom: -35px;
+    /* วางคร่อมระหว่างรูปกับเนื้อหา */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    /* กว้างเกือบเต็มจอ */
+    max-width: 1200px;
+    height: 80px;
+    /* พื้นหลังแบบกระจก (Glassmorphism) */
+    background: rgba(20, 20, 20, 0.85);
+    /* สีดำโปร่งแสง */
+    backdrop-filter: blur(12px);
+    /* เบลอฉากหลังให้ดูนวล */
+    -webkit-backdrop-filter: blur(12px);
+    /* รองรับ Safari */
+    /* เส้นขอบด้านบนบางๆ เพื่อให้ดูคมชัด */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px 12px 0 0;
+    /* มุมบนมน */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* อยู่ชั้นบนสุด */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* เงาฟุ้งๆ ด้านล่าง */
+}
+
+
+/* ดีไซน์แต่ละกล่องเมนู */
+
+.quick-item {
+    position: relative;
+    /* เพื่อวางเส้นคั่น */
+    flex: 1;
+    /* แบ่งช่องเท่ากัน */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* จัดกลางแนวนอน */
+    align-items: center;
+    /* จัดกลางแนวตั้ง */
+    gap: 12px;
+    /* ระยะห่างไอคอนกับตัวหนังสือ */
+    text-decoration: none;
+    color: #b0b0b0;
+    /* สีเทาอ่อน */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* เส้นแบ่งคั่น (Divider) แบบไล่เฉดสี */
+    border-right: none;
+    /* ลบ Border ธรรมดาออก */
+}
+
+
+/* สร้างเส้นคั่นด้วย Pseudo-element เพื่อให้ไล่สีจางหัวท้ายได้ */
+
+.quick-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 50%;
+    /* สูงแค่ครึ่งเดียว */
+    /* ไล่สี: ใส -> ขาวจางๆ -> ใส */
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+
+/* ลบเส้นคั่นช่องสุดท้ายออก */
+
+.quick-item:last-child::after {
+    display: none;
+}
+
+
+/* --- ส่วนไอคอน --- */
+
+.q-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* พื้นหลังวงกลมจางๆ รองไอคอน */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.q-icon i {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+
+/* --- ส่วนตัวหนังสือ --- */
+
+.q-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #e0e0e0;
+    line-height: 1.2;
+    text-align: left;
+    transition: color 0.3s;
+}
+
+
+/* --- Effect ตอนเอาเมาส์ชี้ (Hover) --- */
+
+.quick-item:hover {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.05), transparent);
+    /* ไล่สีพื้นหลังเบาๆ */
+}
+
+.quick-item:hover .q-text {
+    color: #ffffff;
+    /* ตัวหนังสือสว่างขึ้น */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* เรืองแสง */
+}
+
+.quick-item:hover .q-icon {
+    background-color: #ffcc00;
+    /* วงกลมเปลี่ยนเป็นสีทอง */
+    transform: scale(1.1);
+    /* ขยายใหญ่ขึ้น */
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+    /* เงาสีทอง */
+}
+
+.quick-item:hover .q-icon i {
+    color: #000;
+    /* ไอคอนเปลี่ยนเป็นสีดำเพื่อให้ตัดกับสีทอง */
+}
+
+
+/* --- Responsive มือถือ --- */
+
+@media (max-width: 768px) {
+    .quick-nav {
+        width: 100%;
+        border-radius: 0;
+        overflow-x: auto;
+        /* เลื่อนซ้ายขวาได้ */
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+    .quick-item {
+        min-width: 160px;
+        /* บังคับความกว้างในมือถือ */
+        padding: 0 15px;
+    }
+    .quick-item::after {
+        height: 40%;
+    }
+}
+
+
+/* --- ส่วนเนื้อหาข่าวสาร (News Section) --- */
+
+.news-section {
+    background-color: #121212;
+    /* พื้นหลังสีดำเข้ม (Dark Theme) */
+    color: #ffffff;
+    /* เว้นระยะด้านบนเยอะหน่อย เพื่อหลบแถบเมนูที่ห้อยลงมา */
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    /* จำกัดความกว้างเนื้อหา */
+    margin: 0 auto;
+    /* จัดกึ่งกลางจอ */
+    padding: 0 20px;
+    /* เว้นขอบซ้ายขวานิดหน่อย */
+}
+
+
+/* หัวข้อ */
+
+.section-header {
+    margin-bottom: 40px;
+    border-left: 5px solid #ffcc00;
+    /* เส้นขีดสีเหลืองหน้าหัวข้อ */
+    padding-left: 20px;
+}
+
+.section-header h2 {
+    color: #e6e6e6;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.sub-title {
+    color: #ffffff;
+    /* สีเทาจางๆ */
+    font-size: 16px;
+}
+
+
+/* ตารางข่าว (Grid Layout) */
+
+.news-grid {
+    display: grid;
+    /* แบ่งเป็น 2 คอลัมน์เท่ากัน */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    /* ระยะห่างระหว่างข่าว */
+}
+
+
+/* การ์ดข่าว */
+
+.news-card {
+    background-color: #1e1e1e;
+    /* พื้นหลังการ์ดสีเทาเข้ม */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    /* ลอยขึ้นเมื่อเอาเมาส์ชี้ */
+}
+
+
+/* รูปภาพข่าว */
+
+.news-img {
+    width: 100%;
+    height: 250px;
+    /* ล็อคความสูงรูป */
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ขยายรูปให้เต็มกรอบโดยไม่เบี้ยว */
+    transition: transform 0.5s;
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.1);
+    /* ซูมรูปเข้าเมื่อชี้ */
+}
+
+
+/* เนื้อหาข่าว */
+
+.news-content {
+    padding: 25px;
+}
+
+.news-date {
+    font-size: 14px;
+    color: #ffcc00;
+    /* วันที่สีเหลือง */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.news-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: #b0b0b0;
+    /* เนื้อหาสีเทา */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* ตัดคำถ้ายาวเกิน 2 บรรทัด (Optional) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ปุ่มอ่านต่อ */
+
+.read-more {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s;
+}
+
+.read-more:hover {
+    gap: 15px;
+    /* ลูกศรขยับหนีเมื่อชี้ */
+    color: #ffcc00;
+}
+
+
+/* --- ปรับมือถือ (Responsive) --- */
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        /* เรียงเป็นแถวเดียวในมือถือ */
+    }
+    .section-header h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* --- ส่วนปุ่ม "อ่านข่าวทั้งหมด" (แบบกลมกลืน) --- */
+
+.view-all-container {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* เส้นคั่นจางๆ */
+    padding-top: 30px;
+}
+
+.view-all-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 1. เปลี่ยนพื้นหลังเป็นโปร่งใส เพื่อให้กลืนกับพื้นเว็บ */
+    background-color: transparent;
+    color: #b0b0b0;
+    /* สีตัวอักษรเทาอ่อนๆ (ไม่ขาวจั๊วะ) ดูนุ่มนวล */
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+    /* 2. ใช้เส้นขอบจางๆ แทนพื้นหลัง */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-all-btn i {
+    font-size: 24px;
+    color: #ffffff;
+    transition: transform 0.3s;
+}
+
+
+/* --- Effect ตอนชี้เมาส์ (Hover) --- */
+
+.view-all-btn:hover {
+    /* ชี้แล้วให้มีพื้นหลังสว่างขึ้นมานิดนึง */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ffcc00;
+    /* ขอบเปลี่ยนเป็นสีทอง */
+    color: #ffcc00;
+    /* ตัวหนังสือเปลี่ยนเป็นสีทอง */
+}
+
+.view-all-btn:hover i {
+    transform: translateX(10px);
+    /* ลูกศรพุ่ง */
+    color: #ffcc00;
+}
+
+
+/* --- ส่วนหลักสูตร (Curriculum Section) --- */
+
+.curriculum-section {
+    background-color: #121212;
+    /* พื้นหลังดำต่อเนื่องจากส่วนข่าว */
+    padding-bottom: 1px;
+}
+
+
+/* Grid Layout แบบพิเศษ (Bento Box Style) */
+
+.degree-grid {
+    display: grid;
+    /* แบ่งเป็น 2 คอลัมน์เท่ากัน */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* ระยะห่างระหว่างการ์ด */
+    margin-top: 30px;
+}
+
+
+/* การ์ดหลักสูตร */
+
+.degree-card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    height: 300px;
+    /* ความสูงมาตรฐานของการ์ดเล็ก */
+}
+
+
+/* การ์ดใบใหญ่ (Large Card) */
+
+.large-card {
+    /* สั่งให้กินพื้นที่ 2 คอลัมน์ (เต็มความกว้าง) */
+    grid-column: span 2;
+    height: 400px;
+    /* ให้สูงกว่าการ์ดเล็กหน่อย */
+}
+
+
+/* รูปภาพในการ์ด */
+
+.degree-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+/* Effect ซูมรูปตอนเอาเมาส์ชี้ */
+
+.degree-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* เงาดำไล่เฉด (Gradient Overlay) เพื่อให้อ่านตัวหนังสือออก */
+
+.degree-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ไล่สีจากใส (บน) ไปดำเข้ม (ล่าง) */
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* ดันข้อความไปล่างสุด */
+    padding: 30px;
+    transition: padding 0.3s;
+}
+
+.degree-card:hover .degree-overlay {
+    padding-bottom: 40px;
+    /* ขยับข้อความขึ้นนิดนึงตอนชี้ */
+}
+
+
+/* ข้อความในการ์ด */
+
+.degree-overlay h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.degree-overlay p {
+    font-size: 16px;
+    color: #e0e0e0;
+    font-weight: 300;
+    max-width: 80%;
+    /* ไม่ให้ข้อความยาวติดขอบขวาเกินไป */
+}
+
+
+/* --- Responsive (มือถือ) --- */
+
+@media (max-width: 768px) {
+    .degree-grid {
+        grid-template-columns: 1fr;
+        /* เรียงเป็นแถวเดียวทั้งหมด */
+    }
+    .large-card {
+        grid-column: span 1;
+        /* กลับมาเหลือ 1 คอลัมน์ */
+        height: 300px;
+        /* ลดความสูงลง */
+    }
+    .degree-overlay h3 {
+        font-size: 22px;
+    }
+}
+
+
+/* --- ส่วนติดต่อและแผนที่ (Location Section) --- */
+
+.location-section {
+    /* 1. แก้สีพื้นหลังให้เหมือนส่วนเนื้อหาด้านบน (จาก #0a0a0a เป็น #121212) */
+    background-color: #121212;
+    /* 2. แก้ปัญหาระยะห่างชิดเกินไป (เพิ่ม padding-top) */
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.location-container {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+
+/* --- กล่องข้อมูลติดต่อ (ด้านซ้าย) --- */
+
+.contact-info-box {
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(145deg, #1e1e1e, #141414);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info-box h3 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 204, 0, 0.2);
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+
+/* รายการข้อมูลติดต่อ */
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    transition: transform 0.3s;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+}
+
+
+/* วงกลมรองไอคอน */
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 204, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffcc00;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.info-item:hover .icon-circle {
+    background-color: #ffcc00;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+.info-text h4 {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.info-text p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+/* --- กล่องแผนที่ (ด้านขวา) --- */
+
+.map-frame {
+    flex: 1.5;
+    min-width: 300px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    /* เปลี่ยนสีกรอบให้กลืนกับพื้นหลัง */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    position: relative;
+    background-color: #242f3e;
+    /* สีรองพื้นระหว่างรอโหลด */
+}
+
+
+/* 3. ปรับสีแผนที่ Google Maps ให้เป็น Dark Mode */
+
+.map-frame iframe {
+    width: 100%;
+    height: 100%;
+    /* สูตรเด็ด: กลับสี (Invert) แล้วหมุนเฉดสี (Hue-rotate) 
+       จะทำให้แผนที่สีขาว กลายเป็นสีมืด (Dark Theme) ทันที */
+    filter: invert(90%) hue-rotate(180deg) contrast(90%);
+    transition: filter 0.5s;
+}
+
+.map-frame:hover iframe {
+    /* พอเอาเมาส์ชี้ ให้กลับมาสีปกติ หรือจะคงไว้แบบเดิมก็ได้ */
+    filter: invert(0%) hue-rotate(0deg);
+}
+
+
+/* --- Responsive มือถือ --- */
+
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+    }
+    .map-frame {
+        height: 300px;
+    }
+    /* มือถือเว้นระยะด้านบนน้อยหน่อย */
+    .location-section {
+        padding-top: 60px;
+    }
+}
+
+
+/* --- ส่วนท้ายเว็บ (Footer) --- */
+
+.site-footer {
+    background-color: #1a1a1a;
+    /* สีเทาเข้ม (สว่างกว่าพื้นหลังหลักนิดหน่อย) */
+    color: #b0b0b0;
+    padding-top: 60px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* เส้นขอบบางๆ ด้านบน */
+}
+
+.footer-grid {
+    display: grid;
+    /* แบ่งเป็น 4 คอลัมน์เท่าๆ กัน */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+
+/* หัวข้อแต่ละคอลัมน์ */
+
+.footer-col h3 {
+    color: #f0a1e0;
+    /* สีทองตามธีม (หรือจะใช้สีชมพู #e91e63 แบบรูปตัวอย่างก็ได้) */
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+/* ขีดเส้นใต้หัวข้อเล็กๆ */
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #fdaef1;
+}
+
+
+/* ลิงก์เมนูต่างๆ */
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #b0b0b0;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    /* ขยับขวานิดนึงตอนชี้ */
+}
+
+
+/* รายการติดต่อ (คอลัมน์ขวาสุด) */
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    /* จัดชิดบน เพื่อรองรับที่อยู่ยาวๆ */
+    gap: 15px;
+    margin-bottom: 15px;
+    color: #d0d0d0;
+}
+
+.contact-list i {
+    font-size: 18px;
+    color: #5bef5d;
+    margin-top: 3px;
+    /* ดันไอคอนลงนิดนึงให้ตรงกับบรรทัดแรก */
+}
+
+
+/* ไอคอน Social Media วงกลม */
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.social-circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-circle i {
+    font-size: 20px;
+}
+
+
+/* สีเฉพาะของแต่ละแอปเมื่อ Hover */
+
+.social-circle.fb:hover {
+    background-color: #1877F2;
+    transform: translateY(-3px);
+}
+
+.social-circle.line:hover {
+    background-color: #00C300;
+    transform: translateY(-3px);
+}
+
+.social-circle.yt:hover {
+    background-color: #FF0000;
+    transform: translateY(-3px);
+}
+
+.social-circle.tt:hover {
+    background-color: #000000;
+    border: 1px solid #333;
+    transform: translateY(-3px);
+}
+
+
+/* --- แถบลิขสิทธิ์ด้านล่างสุด --- */
+
+.copyright-bar {
+    background-color: #111111;
+    /* สีดำเข้มสุด */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright-bar p {
+    color: #666;
+    font-size: 13px;
+}
+
+
+/* --- Responsive มือถือ --- */
+
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        /* แท็บเล็ตเหลือ 2 คอลัมน์ */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        /* มือถือเหลือ 1 คอลัมน์ยาวลงมา */
+        gap: 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE & RESPONSIVE DESIGN
+   (รองรับ iPhone, iPad, Android 360px+)
+   ========================================= */
+
+
+/* --- 1. สำหรับ Tablet และหน้าจอขนาดกลาง (max-width: 992px) --- */
+
+@media (max-width: 992px) {
+    /* โชว์ปุ่มเมนู 3 ขีด */
+    .menu-toggle {
+        display: block;
+        /* สำคัญมาก! ต้องมีบรรทัดนี้ใน media query */
+        z-index: 1001;
+        color: #fff;
+        font-size: 24px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    /* ซ่อนเมนูหลักแล้วทำเป็น Slide Menu */
+    .nav-menu {
+        position: fixed;
+        /* ใช้ fixed ให้เต็มจอ */
+        top: 0;
+        left: -100%;
+        /* ซ่อนไปทางซ้าย */
+        width: 80%;
+        /* ความกว้างเมนู 80% ของจอ */
+        height: 100vh;
+        /* สูงเต็มจอ */
+        background-color: #141414;
+        /* สีพื้นหลังเดียวกับธีม */
+        flex-direction: column;
+        /* เรียงลงมาแนวตั้ง */
+        align-items: flex-start;
+        /* ชิดซ้าย */
+        padding: 80px 30px;
+        /* เว้นขอบบนเยอะหน่อยกันชนปุ่มปิด */
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        /* ถ้าเมนูยาวเกินให้เลื่อนได้ */
+        z-index: 1000;
+    }
+    .nav-menu.active {
+        left: 0;
+        /* เลื่อนออกมา */
+    }
+    /* ปรับลิงก์ในเมนู */
+    .menu-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+    .menu-links a {
+        font-size: 18px;
+        /* ตัวหนังสือใหญ่ขึ้นกดง่าย */
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 10px;
+        width: 100%;
+    }
+    /* ปรับปุ่ม Action ด้านล่างเมนู */
+    .nav-actions {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+    }
+    .cta-btn {
+        width: 100%;
+        /* ปุ่มสมัครเรียนเต็มความกว้าง */
+        text-align: center;
+        justify-content: center;
+    }
+    /* ปรับ Footer เป็น 2 คอลัมน์ */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* --- 2. สำหรับมือถือทั่วไป (max-width: 768px) --- */
+
+@media (max-width: 768px) {
+    /* Hero Banner ลดความสูงลง */
+    .hero-banner {
+        height: 500px;
+        background-position: center bottom;
+        /* จัดรูปให้เห็นคนด้านล่าง */
+    }
+    /* Quick Nav (เมนูลัด) ให้เลื่อนแนวนอนได้ (Scrollable) */
+    .quick-nav {
+        width: 100%;
+        border-radius: 0;
+        bottom: -40px;
+        /* ขยับตำแหน่ง */
+        padding: 0 10px;
+        /* เทคนิคทำเมนูเลื่อนแนวนอน */
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* เลื่อนลื่นๆ บน iPhone */
+        /* ซ่อน Scrollbar ไม่ให้รกตา */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+    .quick-nav::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+    .quick-item {
+        min-width: 140px;
+        /* กำหนดความกว้างขั้นต่ำของแต่ละปุ่ม */
+        flex-shrink: 0;
+        /* ห้ามหด */
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* Grid ต่างๆ ให้เหลือ 1 คอลัมน์ */
+    .news-grid,
+    .degree-grid {
+        grid-template-columns: 1fr;
+        /* เรียงเดี่ยว */
+    }
+    .large-card {
+        grid-column: span 1;
+        /* การ์ดใหญ่ก็เหลือ 1 ช่อง */
+        height: 250px;
+    }
+    /* Location Stack (เอาแผนที่ลงล่าง) */
+    .location-container {
+        flex-direction: column;
+    }
+    .map-frame {
+        height: 300px;
+        /* ลดความสูงแผนที่ */
+    }
+}
+
+
+/* --- 3. สำหรับมือถือจอเล็ก (iPhone SE, Android 360px) --- */
+
+@media (max-width: 480px) {
+    /* ลดขนาดหัวข้อให้ไม่ล้นจอ */
+    .section-header h2 {
+        font-size: 26px;
+        /* ลดจาก 36px */
+        line-height: 1.3;
+    }
+    /* ปรับระยะห่างขอบจอ (Container Padding) */
+    .container {
+        padding: 0 15px;
+        /* ลดขอบซ้ายขวาให้เนื้อหาดูกว้างขึ้น */
+    }
+    /* Hero Banner เล็กลงอีก */
+    .hero-banner {
+        height: 400px;
+    }
+    /* Logo บน Navbar เล็กลงนิดนึง */
+    .logo-img {
+        height: 45px;
+        /* ปรับให้พอดี */
+    }
+    .nav-logo {
+        padding-left: 15px;
+        padding-right: 40px;
+        min-width: auto;
+        /* ปลดล็อคความกว้าง */
+    }
+    /* Quick Nav ปรับตัวหนังสือให้เล็กอ่านง่าย */
+    .quick-nav {
+        height: 70px;
+        /* ลดความสูง */
+    }
+    .q-text {
+        font-size: 13px;
+    }
+    .q-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .q-icon i {
+        font-size: 14px;
+    }
+    /* Footer เหลือ 1 คอลัมน์ */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-col h3::after {
+        width: 50px;
+        /* ขีดเส้นใต้ยาวขึ้นหน่อย */
+    }
+}
+
+
+/* =========================================
+   ปรับแต่ง Footer สำหรับมือถือ (จัดกึ่งกลาง)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. จัดตัวหนังสือทั้งหมดให้อยู่กึ่งกลาง */
+    .site-footer {
+        text-align: center;
+    }
+    /* 2. จัดเส้นขีดใต้หัวข้อให้อยู่ตรงกลาง */
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+        /* ดันกลับมาให้กลางเป๊ะ */
+    }
+    /* 3. จัดรายการติดต่อ (Contact List) ให้อยู่กลาง */
+    .contact-list li {
+        justify-content: center;
+        /* จัดไอคอนกับตัวหนังสือให้อยู่กลางบรรทัด */
+        text-align: center;
+    }
+    /* 4. จัดกลุ่มไอคอน Social Media ให้อยู่กลาง */
+    .social-icons {
+        justify-content: center;
+    }
+    /* (แถม) เปลี่ยน Effect ตอนชี้ลิงก์ในมือถือ */
+    /* จากเดิมขยับขวา -> เปลี่ยนเป็นขยายใหญ่นิดนึงแทน (เพราะจัดกลางขยับขวาจะดูแปลก) */
+    .footer-links a:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 992px) {
+    /* 1. ตั้งค่า Navbar ให้มีระยะขอบขวาสำหรับปุ่มเมนู */
+    .navbar {
+        padding-right: 20px;
+        /* เว้นที่ด้านขวาให้ปุ่ม */
+    }
+    /* 2. แก้ไขโลโก้ไม่ให้กว้างเกินไปจนดันปุ่มตกขอบ */
+    .nav-logo {
+        min-width: unset;
+        /* ยกเลิกการบังคับความกว้างขั้นต่ำ 380px */
+        width: auto;
+        /* ให้ความกว้างปรับตามเนื้อหา */
+        flex-grow: 1;
+        /* ให้โลโก้กินพื้นที่ที่เหลือ */
+        padding-right: 40px;
+        /* ลดพื้นที่เว้นขาวด้านขวาลง */
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+        /* ปรับมุมเฉียงให้น้อยลง */
+    }
+    /* 3. ลดขนาดรูปโลโก้ลงนิดนึงในมือถือ */
+    .logo-img {
+        height: 45px;
+        /* ปรับให้พอดีกับความสูง Bar */
+    }
+    /* 4. โชว์ปุ่มเมนู 3 ขีด (Hamburger) */
+    .menu-toggle {
+        display: block;
+        /* สั่งให้แสดงผล */
+        z-index: 1001;
+        color: #fff;
+        /* สีไอคอนขาว */
+        font-size: 24px;
+        margin-left: 10px;
+        /* เว้นระยะจากโลโก้นิดนึง */
+    }
+    /* --- ส่วนเมนู Slide (เหมือนเดิม) --- */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        /* กว้าง 85% ของจอ */
+        height: 100vh;
+        background-color: #141414;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .menu-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .menu-links a {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 10px;
+    }
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    /* จัด Footer กึ่งกลางในมือถือ */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        /* 1 คอลัมน์ */
+        text-align: center;
+    }
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contact-list li,
+    .social-icons {
+        justify-content: center;
+    }
+}

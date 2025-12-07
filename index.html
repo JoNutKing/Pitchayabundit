@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต │ Pitchayabundit College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/Pictures/Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <body>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="Pictures/Logo-removebg-preview.png" alt="College Logo" class="logo-img">
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="nav-menu" id="mobile-menu">
+                <ul class="menu-links">
+                    <li><a href="#" class="lang-change" data-th="หลักสูตร" data-en="Curriculum">หลักสูตร</a></li>
+                    <li><a href="#" class="lang-change" data-th="รอบรั้ววิทยาลัย" data-en="Campus Life">รอบรั้ววิทยาลัย</a></li>
+                    <li><a href="#" class="lang-change" data-th="ข่าวสาร" data-en="News">ข่าวสาร</a></li>
+                    <li><a href="#" class="lang-change" data-th="เกี่ยวกับเรา" data-en="About Us">เกี่ยวกับเรา</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="#" class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#" class="lang-btn" id="lang-toggle" onclick="toggleLanguage(event)">
+                        <img id="lang-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg" width="20">
+                        <span id="lang-text">TH</span>
+                    </a>
+                    <a href="#" class="cta-btn lang-change" data-th="สมัครเรียน" data-en="Apply Now">สมัครเรียน</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero-banner">
+
+            <div class="quick-nav">
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-solid fa-list-ul"></i></div>
+                    <div class="q-text lang-change" data-th="หลักสูตร" data-en="Curriculum">หลักสูตร</div>
+                </a>
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="q-text lang-change" data-th="สมัครเรียนออนไลน์" data-en="Admission">สมัครเรียนออนไลน์</div>
+                </a>
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="q-text lang-change" data-th="ค่าธรรมเนียม" data-en="Tuition Fees">ค่าธรรมเนียม</div>
+                </a>
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="q-text lang-change" data-th="ทุนการศึกษา" data-en="Scholarships">ทุนการศึกษา</div>
+                </a>
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="q-text lang-change" data-th="กู้ยืม กยศ." data-en="Student Loan">กู้ยืม กยศ.</div>
+                </a>
+
+                <a href="#" class="quick-item">
+                    <div class="q-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                    <div class="q-text lang-change" data-th="ปฏิทินการศึกษา" data-en="Calendar">ปฏิทินการศึกษา</div>
+                </a>
+
+            </div>
+        </header>
+        </header>
+        </header>
+
+        <section class="news-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="lang-change" data-th="ข่าวสารและบทความ" data-en="News & Articles">ข่าวสารและบทความ</h2>
+                    <p class="sub-title lang-change" data-th="อัปเดตข่าวสารล่าสุดจากรั้ววิทยาลัย" data-en="Latest updates from our college">อัปเดตข่าวสารล่าสุดจากรั้ววิทยาลัย</p>
+                </div>
+
+                <div class="news-grid">
+
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://www.expedia.co.th/stories/wp-content/uploads/2022/07/%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%AA%E0%B8%A7%E0%B8%A2-24.jpg" alt="News 1">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">28/10/2025</span>
+                            <h3 class="lang-change" data-th="เปิดหลักสูตรใหม่! VIRTUAL PRODUCTION" data-en="New Course! VIRTUAL PRODUCTION">เปิดหลักสูตรใหม่! VIRTUAL PRODUCTION</h3>
+                            <p class="lang-change" data-th="อนาคตของวงการภาพยนตร์ระดับโลก คณะดิจิทัลมีเดียและศิลปะภาพยนตร์..." data-en="The future of global film industry...">อนาคตของวงการภาพยนตร์ระดับโลก คณะดิจิทัลมีเดียและศิลปะภาพยนตร์...</p>
+                            <a href="#" class="read-more">
+                                <span class="lang-change" data-th="อ่านต่อ" data-en="Read More">อ่านต่อ</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://kku.ac.th/wp-content/uploads/2020/03/82693295_2727591867321943_985667541001043968_o.jpg" alt="News 2">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">14/03/2025</span>
+                            <h3 class="lang-change" data-th="เปิดตัวหอพักนักศึกษาใหม่ DoBeDo Student Residence" data-en="Launching New Dorm! DoBeDo Student Residence">เปิดตัวหอพักนักศึกษาใหม่ DoBeDo Student Residence</h3>
+                            <p class="lang-change" data-th="ที่พักนักศึกษาสุดคูล ตอบโจทย์ชาวพิชญบัณฑิตที่สุด พร้อมให้จองแล้ววันนี้..." data-en="The coolest student residence answering all needs...">ที่พักนักศึกษาสุดคูล ตอบโจทย์ชาวพิชญบัณฑิตที่สุด พร้อมให้จองแล้ววันนี้...</p>
+                            <a href="#" class="read-more">
+                                <span class="lang-change" data-th="อ่านต่อ" data-en="Read More">อ่านต่อ</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://f.ptcdn.info/068/063/000/poo5ijsp5wm51KSZ98C-o.jpg" alt="News 3" onerror="this.src='https://via.placeholder.com/400x250'">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">12/09/2025</span>
+                            <h3 class="lang-change" data-th="รู้จัก วิทยาลัยเทคนิคพิชญบัณฑิต แบบอินไซต์ รวมทุกหลักสูตร ตอบโจทย์ตลาดงาน" data-en="Get to know Pitchayabundit Inside-Out: All programs for job market">รู้จัก วิทยาลัยเทคนิคพิชญบัณฑิต แบบอินไซต์ รวมทุกหลักสูตร ตอบโจทย์ตลาดงาน</h3>
+                            <p class="lang-change" data-th="เมื่อเทรนด์โลกเปลี่ยนเร็ว การเป็นคนที่ทันเทรนด์และพร้อมรับมือกับอนาคตที่เปลี่ยนไปจึงสำคัญที่สุด ไม่ว่าจะเป็นด้านเทคโนโลยี..." data-en="When the world changes fast, staying trendy and ready for the future is crucial...">เมื่อเทรนด์โลกเปลี่ยนเร็ว การเป็นคนที่ทันเทรนด์และพร้อมรับมือกับอนาคตที่เปลี่ยนไปจึงสำคัญที่สุด...</p>
+                            <a href="#" class="read-more">
+                                <span class="lang-change" data-th="อ่านต่อ" data-en="Read More">อ่านต่อ</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-img">
+                            <img src="https://booking.rmutl.ac.th/backoffice/assets/uploads/room/room_286_20191206101856.jpg" alt="News 4" onerror="this.src='https://via.placeholder.com/400x250'">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">30/10/2025</span>
+                            <h3 class="lang-change" data-th="มากกว่าแค่งานออกแบบ: ส่องอินไซต์การเรียน ป.โท สถาปัตย์ฯ" data-en="More than design: M.Arch Insights">มากกว่าแค่งานออกแบบ: ส่องอินไซต์การเรียน ป.โท สถาปัตย์ฯ</h3>
+                            <p class="lang-change" data-th="ในยุคที่การแข่งขันสูง สกิล 'ดีไซน์' อย่างเดียวอาจไม่พออีกต่อไป วงการสถาปัตยกรรมและการออกแบบยุคใหม่..." data-en="In high competition era, 'Design' skill alone might not be enough...">ในยุคที่การแข่งขันสูง สกิล 'ดีไซน์' อย่างเดียวอาจไม่พออีกต่อไป วงการสถาปัตยกรรมและการออกแบบยุคใหม่...</p>
+                            <a href="#" class="read-more">
+                                <span class="lang-change" data-th="อ่านต่อ" data-en="Read More">อ่านต่อ</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="view-all-container">
+                    <a href="#" class="view-all-btn">
+                        <span class="lang-change" data-th="อ่านข่าวทั้งหมด" data-en="Read All News">อ่านข่าวทั้งหมด</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="curriculum-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="lang-change" data-th="ระดับการศึกษาที่เปิดสอน" data-en="Educational Levels">ระดับการศึกษาที่เปิดสอน</h2>
+                    <p class="sub-title lang-change" data-th="มุ่งเน้นการสร้างอาชีพด้วยระบบการเรียนรู้ที่ทันสมัย" data-en="Focusing on career building with modern learning systems">มุ่งเน้นการสร้างอาชีพด้วยระบบการเรียนรู้ที่ทันสมัย</p>
+                </div>
+
+                <div class="degree-grid">
+
+                    <a href="#" class="degree-card large-card">
+                        <img src="https://ptl.ac.th/wp-content/uploads/2023/03/6-6-1024x683.jpg" alt="Vocational Certificate" onerror="this.src='https://via.placeholder.com/800x400'">
+                        <div class="degree-overlay">
+                            <h3 class="lang-change" data-th="ประกาศนียบัตรวิชาชีพ (ปวช.)" data-en="Vocational Certificate">ประกาศนียบัตรวิชาชีพ (ปวช.)</h3>
+                            <p class="lang-change" data-th="รับผู้จบ ม.3 หรือเทียบเท่า เน้นปูพื้นฐานทักษะอาชีพสู่อนาคต" data-en="For Grade 9 graduates. Building fundamental skills for the future.">รับผู้จบ ม.3 หรือเทียบเท่า เน้นปูพื้นฐานทักษะอาชีพสู่อนาคต</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="degree-card">
+                        <img src="https://ptl.ac.th/wp-content/uploads/2023/03/12-6-1024x683.jpg" alt="High Vocational Certificate" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <div class="degree-overlay">
+                            <h3 class="lang-change" data-th="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)" data-en="Diploma / High Voc. Cert.">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</h3>
+                            <p class="lang-change" data-th="ต่อยอดความเชี่ยวชาญเฉพาะด้าน สู่ความเป็นมืออาชีพ" data-en="Advanced specialization for professional careers.">ต่อยอดความเชี่ยวชาญเฉพาะด้าน สู่ความเป็นมืออาชีพ</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="degree-card">
+                        <img src="https://campus.campus-star.com/app/uploads/2016/12/rmutp-2-600x399.jpg" alt="Dual Vocational Training" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <div class="degree-overlay">
+                            <h3 class="lang-change" data-th="ระบบทวิภาคี (เรียนไปทำงานไป)" data-en="Dual Vocational Training (DVT)">ระบบทวิภาคี (เรียนไปทำงานไป)</h3>
+                            <p class="lang-change" data-th="เรียนรู้จากประสบการณ์จริงในสถานประกอบการ มีรายได้ระหว่างเรียน" data-en="Learn from real experience in workplaces. Earn while you learn.">เรียนรู้จากประสบการณ์จริงในสถานประกอบการ มีรายได้ระหว่างเรียน</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="location-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="lang-change" data-th="ติดต่อเราและการเดินทาง" data-en="Contact & Location">ติดต่อเราและการเดินทาง</h2>
+                    <p class="sub-title lang-change" data-th="พร้อมให้คำปรึกษาและต้อนรับสู่รั้วพิชญบัณฑิต" data-en="Ready to consult and welcome you to Pitchayabundit">พร้อมให้คำปรึกษาและต้อนรับสู่รั้วพิชญบัณฑิต</p>
+                </div>
+
+                <div class="location-container">
+
+                    <div class="contact-info-box">
+                        <h3 class="lang-change" data-th="ช่องทางการติดต่อ" data-en="Contact Channels">ช่องทางการติดต่อ</h3>
+
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-text">
+                                <h4 class="lang-change" data-th="ที่อยู่" data-en="Address">ที่อยู่</h4>
+                                <p class="lang-change" data-th="อ.บ้านดุง จ.อุดรธานี 41190" data-en="Ban Dung, Udon Thani 41190">อ.บ้านดุง จ.อุดรธานี 41190</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-text">
+                                <h4 class="lang-change" data-th="เบอร์โทรศัพท์" data-en="Phone">เบอร์โทรศัพท์</h4>
+                                <p>042-xxx-xxx</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fa-brands fa-line"></i></div>
+                            <div class="info-text">
+                                <h4 class="lang-change" data-th="Line Official" data-en="Line Official">Line Official</h4>
+                                <p>@pichayabundit</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle"><i class="fa-brands fa-facebook-f"></i></div>
+                            <div class="info-text">
+                                <h4 class="lang-change" data-th="Facebook Fanpage" data-en="Facebook Fanpage">Facebook Fanpage</h4>
+                                <p>วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-frame">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.802872658826!2d103.256!3d17.698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQxJzUzLjAiTiAxMDPCsDE1JzIyLjAiRQ!5e0!3m2!1sth!2sth!4v1600000000000!5m2!1sth!2sth"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <div class="footer-col">
+                        <h3 class="lang-change" data-th="หลักสูตร / สาขาวิชา" data-en="Curriculum / Majors">หลักสูตร / สาขาวิชา</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="lang-change" data-th="ช่างยนต์" data-en="Auto Mechanics">ช่างยนต์</a></li>
+                            <li><a href="#" class="lang-change" data-th="ช่างไฟฟ้ากำลัง" data-en="Electrical Power">ช่างไฟฟ้ากำลัง</a></li>
+                            <li><a href="#" class="lang-change" data-th="อิเล็กทรอนิกส์" data-en="Electronics">อิเล็กทรอนิกส์</a></li>
+                            <li><a href="#" class="lang-change" data-th="การบัญชี" data-en="Accounting">การบัญชี</a></li>
+                            <li><a href="#" class="lang-change" data-th="การตลาด" data-en="Marketing">การตลาด</a></li>
+                            <li><a href="#" class="lang-change" data-th="คอมพิวเตอร์ธุรกิจ" data-en="Business Computer">คอมพิวเตอร์ธุรกิจ</a></li>
+                            <li><a href="#" class="lang-change" data-th="เทคโนโลยีสารสนเทศ" data-en="Information Tech">เทคโนโลยีสารสนเทศ</a></li>
+                            <li><a href="#" class="lang-change" data-th="การโรงแรม" data-en="Hotel Management">การโรงแรม</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3 class="lang-change" data-th="หน่วยงานภายใน" data-en="Departments">หน่วยงานภายใน</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="lang-change" data-th="สำนักผู้อำนวยการ" data-en="Director Office">สำนักผู้อำนวยการ</a></li>
+                            <li><a href="#" class="lang-change" data-th="สำนักวิชาการ" data-en="Academic Affairs">สำนักวิชาการ</a></li>
+                            <li><a href="#" class="lang-change" data-th="งานทะเบียนวัดผล" data-en="Registrar Office">งานทะเบียนวัดผล</a></li>
+                            <li><a href="#" class="lang-change" data-th="งานแนะแนว" data-en="Guidance Office">งานแนะแนว</a></li>
+                            <li><a href="#" class="lang-change" data-th="งานกิจการนักเรียน" data-en="Student Affairs">งานกิจการนักเรียน</a></li>
+                            <li><a href="#" class="lang-change" data-th="งานบริหารทรัพยากร" data-en="Resource Management">งานบริหารทรัพยากร</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3 class="lang-change" data-th="บริการนักศึกษา" data-en="Student Services">บริการนักศึกษา</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="lang-change" data-th="ระบบศิษย์เก่าสัมพันธ์" data-en="Alumni System">ระบบศิษย์เก่าสัมพันธ์</a></li>
+                            <li><a href="#" class="lang-change" data-th="ดาวน์โหลดเอกสาร" data-en="Downloads">ดาวน์โหลดเอกสาร</a></li>
+                            <li><a href="#" class="lang-change" data-th="ตรวจสอบผลการเรียน" data-en="Check Grades">ตรวจสอบผลการเรียน</a></li>
+                            <li><a href="#" class="lang-change" data-th="ปฏิทินกิจกรรม" data-en="Events Calendar">ปฏิทินกิจกรรม</a></li>
+                            <li><a href="#" class="lang-change" data-th="ร้องเรียน / แจ้งปัญหา" data-en="Complaints / Issues">ร้องเรียน / แจ้งปัญหา</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col contact-col">
+                        <h3 class="lang-change" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fa-brands fa-line"></i>
+                                <span>@pichayabundit</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                <span>042-xxx-xxx</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>info@pichayabundit.ac.th</span>
+                            </li>
+                            <li class="address-li">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span class="lang-change" data-th="วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต อ.บ้านดุง จ.อุดรธานี" data-en="Pitchayabundit Technological College, Ban Dung, Udon Thani">วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต อ.บ้านดุง จ.อุดรธานี</span>
+                            </li>
+                        </ul>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-circle fb"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-circle line"><i class="fa-brands fa-line"></i></a>
+                            <a href="#" class="social-circle yt"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="social-circle tt"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright-bar">
+                <p class="lang-change" data-th="© 2025 วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต. สงวนลิขสิทธิ์." data-en="© 2025 Pitchayabundit Technological College. All Rights Reserved.">© 2025 วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต. สงวนลิขสิทธิ์.</p>
+            </div>
+        </footer>
+
+
+        <script>
+            // กำหนดตัวแปรสถานะเริ่มต้น (true = ไทย, false = อังกฤษ)
+            let isThai = true;
+
+            function toggleLanguage(e) {
+                e.preventDefault(); // ป้องกันไม่ให้ลิงก์ดีดกลับไปหน้าบนสุด
+                isThai = !isThai; // สลับค่าจริง/เท็จ
+
+                // 1. เปลี่ยนรูปธงและตัวอักษรบนปุ่ม
+                const flagImg = document.getElementById('lang-flag');
+                const langText = document.getElementById('lang-text');
+
+                if (isThai) {
+                    flagImg.src = "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg";
+                    langText.innerText = "TH";
+                } else {
+                    flagImg.src = "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg";
+                    langText.innerText = "EN";
+                }
+
+                // 2. วนลูปเปลี่ยนข้อความทั้งหมดที่มี class 'lang-change'
+                const elements = document.querySelectorAll('.lang-change');
+                elements.forEach(el => {
+                    // ถ้าเป็นไทย ให้ดึงค่าจาก data-th, ถ้าอังกฤษ ดึงจาก data-en
+                    el.innerText = isThai ? el.getAttribute('data-th') : el.getAttribute('data-en');
+                });
+            }
+
+            // --- [เพิ่มโค้ดส่วนนี้เข้าไปครับ] ฟังก์ชันเปิด-ปิดเมนูมือถือ ---
+            function toggleMobileMenu() {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.querySelector('.menu-toggle i');
+
+                // สลับคลาส active (เลื่อนเมนูเข้า/ออก)
+                menu.classList.toggle('active');
+
+                // เปลี่ยนไอคอน (ถ้าเปิดอยู่เป็น X, ถ้าปิดเป็น 3 ขีด)
+                if (menu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            // (แถม) คลิกที่พื้นที่ว่างข้างนอกแล้วปิดเมนู
+            document.addEventListener('click', function(event) {
+                const menu = document.getElementById('mobile-menu');
+                const toggle = document.querySelector('.menu-toggle');
+
+                // ถ้าคลิกข้างนอกเมนู และไม่ได้คลิกที่ปุ่มกด -> ให้ปิดเมนู
+                if (!menu.contains(event.target) && !toggle.contains(event.target) && menu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        </script>
+    </body>
